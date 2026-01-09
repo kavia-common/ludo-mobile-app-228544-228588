@@ -1,18 +1,13 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+
 import 'package:LudoMobileClientFlutter/main.dart';
 
 void main() {
-  testWidgets('App generation message displayed', (WidgetTester tester) async {
-    await tester.pumpWidget(const MyApp());
+  testWidgets('App boots and shows Splash', (WidgetTester tester) async {
+    await tester.pumpWidget(const LudoApp());
 
-    expect(find.text('LudoMobileClientFlutter App is being generated...'), findsOneWidget);
-    expect(find.byType(CircularProgressIndicator), findsOneWidget);
-  });
-
-  testWidgets('App bar has correct title', (WidgetTester tester) async {
-    await tester.pumpWidget(const MyApp());
-
-    expect(find.text('LudoMobileClientFlutter'), findsOneWidget);
+    // Splash renders immediately.
+    expect(find.text('Ludo'), findsOneWidget);
+    expect(find.text('Loading…'), findsOneWidget);
   });
 }
