@@ -37,7 +37,7 @@ void main() {
         awaitingMove: true,
       );
 
-      final move = const LudoMove(piece: red0, dice: 3);
+      final move = LudoMove(piece: red0, dice: 3);
       final next = LudoRulesEngine.applyMove(state, move);
 
       expect(next.positions[red0], const PiecePosition.track(4));

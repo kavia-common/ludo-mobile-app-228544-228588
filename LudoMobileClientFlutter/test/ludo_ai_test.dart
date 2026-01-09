@@ -49,10 +49,8 @@ void main() {
       expect(legal, isNotEmpty);
 
       // Confirm there exists a capturing move in legal.
-      final capturingMove = legal.firstWhere(
-        (m) => m.piece == red0,
-        orElse: () => const LudoMove(piece: LudoPieceId(color: LudoColor.red, number: 99), dice: 3),
-      );
+      expect(legal.any((m) => m.piece == red0), isTrue);
+      final capturingMove = legal.firstWhere((m) => m.piece == red0);
       expect(capturingMove.piece, red0);
 
       final ai = LudoAiStrategies.forDifficulty(AiDifficulty.medium, seed: 7);
