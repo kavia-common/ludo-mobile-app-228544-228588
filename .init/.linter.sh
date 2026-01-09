@@ -1,0 +1,4 @@
+#!/bin/bash
+cd /home/kavia/workspace/code-generation/ludo-mobile-app-228544-228588/LudoMobileClientFlutter
+flutter analyze
+
